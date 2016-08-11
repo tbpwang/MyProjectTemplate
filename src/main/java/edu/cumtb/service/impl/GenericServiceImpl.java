@@ -18,8 +18,8 @@ abstract class GenericServiceImpl<M extends Serializable, PK extends Number> imp
     //    @Autowired
     GenericDao<M, PK> genericDao;
 
-    public void add(M model) {
-        genericDao.add(model);
+    public int add(M model) {
+        return genericDao.add(model);
     }
 
     public List<M> queryOne(String modelAction, M model) {

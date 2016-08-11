@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="common/inc.jsp"%>>
+<%@include file="common/inc.jsp"%>
 <html>
 <head>
     <title>Index Page</title>
@@ -16,12 +16,17 @@
     <h2>Login Page</h2>
     <hr>
     <form action="${pageContext.request.contextPath}/user/login" method="post">
-        USERNAME: <input type="text" name="username" placeholder="USERNAME" value="admin"><br>
-        PASSWORD: <input type="password" name="password" placeholder="PASSWORD" value="123"><br>
+        <label for="username">USERNAME:</label>
+        <input type="text" id="username" name="username" placeholder="USERNAME" value="admin"><br>
+        <label for="password">PASSWORD:</label>
+        <input type="password" id="password" name="password" placeholder="PASSWORD" value="123"><br>
+        <br>
         <input type="submit" value="LOGIN">
     </form>
 </div>
+
+${requestScope.message}
 <hr>
-<a href="${pageContext.request.contextPath}/user/register">REGISTER</a>
+<a href="${ctx}/userView/register.jsp">REGISTER</a>
 </body>
 </html>

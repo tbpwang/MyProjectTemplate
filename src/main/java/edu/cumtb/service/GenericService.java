@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public interface GenericService<M extends Serializable, PK extends Number> {
     //CRUD
-    void add(M model);
+    int add(M model);
 
     List<M> queryOne(String modelAction, M model);
 

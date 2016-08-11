@@ -22,6 +22,10 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
     }
 
     public User login(User user) {
-        return super.genericDao.queryOne("user.login", user).get(0);
+        List<User> users = genericDao.queryOne("user.login",user);
+        if (users.size()==1) {
+            return users.get(0);
+        }
+        return null;
     }
 }

@@ -18,17 +18,16 @@ class GenericDaoImpl<M extends Serializable, PK extends Number> implements Gener
 
     private String namespace;
 
-    @Autowired
-    GenericDaoImpl(SqlSession sqlSession) {
+    GenericDaoImpl() {
         Class<M> clazz = (Class<M>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
         namespace = clazz.getSimpleName().toLowerCase().concat(".");
-        this.sqlSession = sqlSession;
     }
 
-    private final SqlSession sqlSession;
+    @Autowired
+    private SqlSession sqlSession;
 
-    public void add(M model) {
-        sqlSession.insert(namespace.concat("create"), model);
+    public int add(M model) {
+        return sqlSession.insert(namespace.concat("add"), model);
     }
 
     public List<M> queryOne(String modelAction, M model) {
@@ -40,18 +39,18 @@ class GenericDaoImpl<M extends Serializable, PK extends Number> implements Gener
     }
 
     public List<M> searchAll() {
-        return null;
+        return sqlSession.selectList(namespace.concat("searchAll"));
     }
 
     public M searchById(PK id) {
-        return null;
+        return sqlSession.selectOne(namespace.concat("searchById"),id);
     }
 
     public void modify(M model) {
-
+        sqlSession.update(namespace.concat("modify"), model);
     }
 
     public void remove(PK id) {
-
+        sqlSession.delete(namespace.concat("remove"),id);
     }
 }

@@ -3,9 +3,29 @@
         "Http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="user">
-
-
+    <insert id="add" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+        insert into exam.user(username, password) values(#{username},#{password})
+        <!--insert into exam.user(username, password, phone, address) values(#{username},#{password},#{phone},#{address})-->
+        <!--<selectKey order="AFTER">-->
+        <!--select last_insert_id()-->
+        <!--</selectKey>-->
+    </insert>
     <select id="login" parameterType="user" resultType="user">
         select * from exam.user where username=#{username} and password=#{password}
     </select>
+
+    <select id="searchAll" resultType="user">
+        select * from exam.user where role != 'admin' order by id
+    </select>
+    <select id="searchById" parameterType="int" resultType="user">
+        select * from exam.user where id = #{id}
+    </select>
+
+    <delete id="remove" parameterType="int">
+        delete from exam.user where id = #{id}
+    </delete>
+
+    <update id="modify" parameterType="user">
+        update exam.user set password = #{password} where id = #{id}
+    </update>
 </mapper>
