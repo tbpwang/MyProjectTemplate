@@ -22,6 +22,6 @@
     </form>
 </div>
 <hr>
-<a href="${pageContext.request.contextPath}/user/register"></a>
+<a href="${pageContext.request.contextPath}/user/register">REGISTER</a>
 </body>
 </html>
