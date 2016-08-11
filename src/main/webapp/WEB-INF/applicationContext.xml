@@ -18,10 +18,10 @@
         <property name="url" value="${url}"/>
         <property name="driverClassName" value="${driverClassName}"/>
         <property name="filters" value="stat"/>
-        <property name="validationQuery" value="select 'x"/>
-        <property name="testOnBorrow" value="false"/>
-        <property name="testOnReturn" value="false"/>
-        <property name="testWhileIdle" value="true"/>
+        <!--<property name="validationQuery" value="select 'x"/>-->
+        <!--<property name="testOnBorrow" value="false"/>-->
+        <!--<property name="testOnReturn" value="false"/>-->
+        <!--<property name="testWhileIdle" value="true"/>-->
 
 
     </bean>
