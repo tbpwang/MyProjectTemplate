@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Common User Page</title>
+    <link rel="stylesheet" href="${ctx}/style/css.css">
 </head>
 <body>
 <c:if test="${sessionScope.user.role != 'user'}">
@@ -17,9 +18,9 @@
 </c:if>
 <h2>User Page</h2>
 <hr>
-<div id="welcome" style="text-align: right">Welcome: ${sessionScope.user.username}</div>
+<div id="welcome" style="text-align: right"><h3>Welcome: ${sessionScope.user.username}</h3></div>
 <hr>
-<table border="1">
+<table border="1" >
     <tr bgcolor="#00bfff">
         <th>USER_ID</th>
         <th>USERNAME</th>

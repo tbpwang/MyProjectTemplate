@@ -1,0 +1,19 @@
+form{
+    position: relative;
+}
+
+input {
+    position: absolute;
+    float: right;
+}
+
+table {
+    table-layout: auto;
+    empty-cells: hide;
+    border-collapse: collapse;
+}
+
+table.td {
+    vertical-align: middle;
+}
+

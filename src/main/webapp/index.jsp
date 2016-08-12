@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Index Page</title>
+    <link rel="stylesheet" href="${ctx}/style/css.css">
 </head>
 <body>
 <div>
@@ -20,7 +21,7 @@
         <input type="text" id="username" name="username" placeholder="USERNAME" value="admin"><br>
         <label for="password">PASSWORD:</label>
         <input type="password" id="password" name="password" placeholder="PASSWORD" value="123"><br>
-        <br>
+        <hr>
         <input type="submit" value="LOGIN">
     </form>
 </div>
